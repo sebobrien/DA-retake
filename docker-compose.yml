@@ -1,33 +1,33 @@
 version: '3'
 services:
   eureka-service:
-    image: da-retake:eureka-service
+    image: bashob/da-retake:eureka-service
     container_name: eureka-service
     ports:
      - "8761:8761"
 
   service-instance-service:
-    image: da-retake:service-instance-service
+    image: bashob/da-retake:service-instance-service
     container_name: service-instance-service  
 
   gateway-service:
-    image: da-retake:gateway-service
+    image: bashob/da-retake:gateway-service
     container_name: gateway-service
     ports:
      - "8765:8765"
      
   composite-service:
-    image: da-retake:composite-service
+    image: bashob/da-retake:composite-service
     container_name: composite-service 
 
   movie-service:
-    image: da-retake:movie-service
+    image: bashob/da-retake:movie-service
     container_name: movie-service 
 
   recommendation-service:
-    image: da-retake:recommendation-service
+    image: bashob/da-retake:recommendation-service
     container_name: recommendation-service 
 
   review-service:
-    image: da-retake:review-service
+    image: bashob/da-retake:review-service
     container_name: review-service     

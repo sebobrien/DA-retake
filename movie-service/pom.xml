@@ -72,12 +72,12 @@
 					<execution>
 						<id>default</id>
 						<goals>
-							<goal>build</goal>
+							<goal>build</goal><goal>push</goal>
 						</goals>
 					</execution>
 				</executions>
 				<configuration>
-					<repository>da-retake</repository>
+					<repository>bashob/da-retake</repository>
 					<tag>movie-service</tag>
 					<buildArgs>
 						<JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>

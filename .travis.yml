@@ -1,0 +1,26 @@
+language: java
+cache:
+  directories:
+  - $HOME/.m2
+jdk:
+- oraclejdk8
+sudo: required
+services:
+- docker
+notifications:
+  email:
+  - sebobrien@gmail.com
+  on_success: always
+  on_failure: always
+
+script:
+- docker login -u bashob -p y2NSAp902SuD
+-  mvn -f  eureka-service/ clean package dockerfile:build dockerfile:push
+-  mvn -f  gateway-service/ clean package dockerfile:build dockerfile:push
+-  mvn -f  service-instance-service/ clean package dockerfile:build dockerfile:push
+-  mvn -f  movie-service/ clean package dockerfile:build dockerfile:push
+-  mvn -f  review-service/ clean package dockerfile:build dockerfile:push
+-  mvn -f  recommendation-service/ clean package dockerfile:build dockerfile:push
+-  mvn -f  composite-service/ clean package dockerfile:build dockerfile:push
+- docker-compose up
+
